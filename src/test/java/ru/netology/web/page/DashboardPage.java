@@ -15,7 +15,7 @@ public class DashboardPage {
   private final String balanceStart = "баланс: ";
   private final String balanceFinish = "p. ";
   private final SelenideElement heading = $("[data-test-id=dashboard]");
-  private final ElementsCollection cards = $$(".list__item div");
+  private final ElementsCollection cards = $$(".list__item div");  //.list__item div//.list list_theme_alfa-on-white CardList_cardBlock__gEjoa
   private final SelenideElement reloadButton = $("[data-test-id = 'action-reload']");
 
   public DashboardPage() {
@@ -23,7 +23,10 @@ public class DashboardPage {
       heading.shouldBe(visible);
   }
 
-
+  public int getCardBalance (String makeCardNumber){
+      var text = cards.findBy(Condition.text(makeCardNumber)).getText();
+      return extractBalance(text);
+  }
 
   public int getCardBalance (int index) {
       var text = cards.get(index).getText();

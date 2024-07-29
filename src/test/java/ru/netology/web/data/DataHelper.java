@@ -41,16 +41,18 @@ public class DataHelper {
     return new CardInfo("5559000000000002", "0f3f5c2a-249e-4c3d-8287-09f7a039391d");
   }
 
-  public static int getMaskedNumber(String cardNumber) {
+  public static String getMaskedNumber(String cardNumber) {
 
-    return "************ " + cardNumber.substring(15);
+    return "**** **** **** " + cardNumber.substring(15);
   }
 
   public static int generateValidAmount(int balance) {
+
     return new Random().nextInt(Math.abs(balance)) + 1;
   }
 
   public static int generateInvalidAmount(int balance) {
+
     return Math.abs(balance) + new Random().nextInt(10000);
   }
 }
