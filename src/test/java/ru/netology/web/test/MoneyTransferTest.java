@@ -14,8 +14,8 @@ import static ru.netology.web.data.DataHelper.*;
 
 public class MoneyTransferTest {
     DashboardPage dashboardPage;
-    DataHelper.CardInfo firstCardInfo;
-    DataHelper.CardInfo secondCardInfo;
+    CardInfo firstCardInfo;
+    CardInfo secondCardInfo;
     int firstCardBalance;
     int secondCardBalance;
 
@@ -28,7 +28,7 @@ public class MoneyTransferTest {
         dashboardPage = verificationPage.validVerify(verificationCode);
         firstCardInfo = DataHelper.getFirstCardInfo();
         secondCardInfo = DataHelper.getSecondCardInfo();
-        firstCardBalance = dashboardPage.getCardBalance(DataHelper.getMaskedNumber(firstCardInfo.getCardNumber()));
+        firstCardBalance = dashboardPage.getCardBalance(getMaskedNumber(firstCardInfo.getCardNumber()));
         secondCardBalance = dashboardPage.getCardBalance(1);
     }
 
