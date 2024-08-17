@@ -34,7 +34,7 @@ public class MoneyTransferTest {
 
     @Test
     void shouldTransferMoneyFromFirstCardToSecond() {
-     var amount = generateInvalidAmount(firstCardBalance);
+     var amount = generateValidAmount(firstCardBalance);
      var expectedBalanceFirstCard = firstCardBalance - amount;
      var expectedBalanceSecondCard = secondCardBalance + amount;
      var transferPage = dashboardPage.selectCardToTransfer(secondCardInfo);
